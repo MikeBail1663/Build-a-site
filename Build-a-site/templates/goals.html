@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Goals</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Set Your Fitness Goals</h1>
+    </header>
+    
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="custom-button">Back</a>
+    </div>
+    
+    <main>
+        {% if message %}
+        <div class="message">
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+        <form method="POST">
+            <label for="goal_steps">Daily Step Goal:</label>
+            <input type="number" id="goal_steps" name="goal_steps" required>
+
+            <label for="goal_water">Daily Water Goal (ml):</label>
+            <input type="number" id="goal_water" name="goal_water" required>
+
+            <button type="submit">Set Goal</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Progress</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/progress.js"></script>
+</head>
+<body>
+    <!-- Back Button -->
+    <div class="button-container">
+        <a href="{{ url_for('index') }}" class="custom-button">Back</a>
+    </div>
+
+    <header>
+        <h1>Track Your Fitness Goals</h1>
+        {% if message %}
+        <div class="message">
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+    </header>
+
+    <main>
+        <form method="POST">
+            <label for="steps">Steps Taken:</label>
+            <input type="number" id="steps" name="steps" required>
+            
+            <label for="water">Water Intake (ml):</label>
+            <input type="number" id="water" name="water" required>
+            
+            <button type="submit">Add Progress</button>
+        </form>
+
+        <section class="progress">
+            <h2>Today's Progress</h2>
+
+            <div class="progress-circle" id="steps-circle" 
+                style="--progress: {{ progress.steps / goal.steps * 100 }};" 
+                data-complete="{{ progress.steps }}" 
+                data-goal="{{ goal.steps }}">
+            </div>
+            <p>Steps: {{ progress.steps }}/{{ goal.steps }}</p>
+            <p class="remaining">
+                Remaining: {% if goal.steps - progress.steps < 0 %}0{% else %}{{ goal.steps - progress.steps }}{% endif %} steps
+            </p>
+
+            <div class="progress-circle" id="water-circle" 
+                style="--progress: {{ progress.water / goal.water * 100 }};" 
+                data-complete="{{ progress.water }}" 
+                data-goal="{{ goal.water }}">
+            </div>
+            <p>Water: {{ progress.water }}/{{ goal.water }} ml</p>
+            <p class="remaining">
+                Remaining: {% if goal.water - progress.water < 0 %}0{% else %}{{ goal.water - progress.water }}{% endif %} ml
+            </p>
+        </section>
+    </main>
+</body>
+</html>

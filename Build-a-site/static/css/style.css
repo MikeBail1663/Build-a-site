@@ -1,0 +1,387 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 80%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* General Page Styling */
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.message {
+    background: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 60%;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Progress Form */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+form label {
+    display: block;
+    font-size: 1.2em;
+    margin: 15px 0 5px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: linear-gradient(145deg, #1e90ff, #00bfff);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #00bfff, #1e90ff);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Progress Section */
+.progress {
+    margin: 30px auto;
+    width: 60%;
+    text-align: center;
+    color: #fff;
+}
+
+.progress h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 2em;
+}
+
+.progress-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 calc(var(--progress, 0) * 1%), 
+        #f5f5f5 0%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.progress-circle::after {
+    content: attr(data-complete) '/' attr(data-goal);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.progress p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Remaining Goals Section */
+.remaining {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #f39c12;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+header p {
+    font-size: 1.3em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Navigation Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(145deg, #6fb1fc, #1e90ff);
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-button:hover {
+    background: linear-gradient(145deg, #1e90ff, #6fb1fc);
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.custom-button:active {
+    transform: scale(1);
+    background: linear-gradient(145deg, #185a9d, #1e90ff);
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Forms */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+form label {
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+form input {
+    width: 90%;
+    padding: 15px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+form button {
+    margin-top: 20px;
+}
+
+/* Tracker Logs */
+.log-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
+    width: 80%;
+    text-align: left;
+}
+
+.log-container h2 {
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.log-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.log-container li {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    font-size: 1.1em;
+}
+
+form button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #feb47b, #ff7e5f);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+
+form button:active {
+    transform: translateY(1px);
+    background: linear-gradient(145deg, #e55b3c, #ff7e5f);
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Goals Summary */
+.goals-summary {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.goals-summary h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.goals-summary p {
+    font-size: 1.2em;
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+/* Tips Section */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 25px;
+    margin: 30px auto;
+    width: 80%;
+}
+/* Back Button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff6347, #ff4500);
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-button:hover {
+    background: linear-gradient(145deg, #ff4500, #ff6347);
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.custom-button:active {
+    transform: scale(1);
+    background: linear-gradient(145deg, #e43f1a, #ff6347);
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tip {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.tip h3 {
+    margin-bottom: 15px;
+    font-size: 1.7em;
+    color: #4caf50;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.tip p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        width: 95%;
+    }
+
+    form,
+    .log-container,
+    .goals-summary {
+        width: 95%;
+    }
+
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+}
